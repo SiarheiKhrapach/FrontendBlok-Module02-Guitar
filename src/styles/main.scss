@@ -1,13 +1,15 @@
 @import 'font';
-
-$font: "Unbounded", sans-serif;
-$accent: #7027E2;
-$light: #fff;
-$dark: #2a2f36;
-$grey: #ededed;
-
-$tr: .3s;
+@import 'var';
 
 body {
     font-family: $font;
+}
+
+a {
+    color: $dark;
+    transition: $tr;
+}
+
+a:hover {
+    color: $accent;
 }
