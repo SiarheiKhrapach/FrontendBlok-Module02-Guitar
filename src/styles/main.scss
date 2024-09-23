@@ -3,13 +3,103 @@
 
 body {
     font-family: $font;
+    font-weight: 400;
+    background-color: #1F2023;
 }
 
 a {
-    color: $dark;
-    transition: $tr;
+    text-decoration: none;
 }
 
-a:hover {
-    color: $accent;
+.header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 71px;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 27px;
+        position: absolute;
+        background-color: $accent;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    &__logo {
+        background-color: $accent;
+        padding: 17px 45px 0 45px;
+        border-radius: 10px 0 0 0;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 26px;
+            height: 24px;
+            background-image: url(../images/header-bottom-left.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: 0;
+            bottom: -24px;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 71px;
+            background-image: url(../images/header-left.svg);
+            position: absolute;
+            right: -68px;
+            top: 0px;
+        }
+    }
+    &__link {
+        color: $light;
+        background-color: $accent;
+        padding: 17px 45px 0 45px;
+        border-radius: 0 10px 0 0;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 26px;
+            height: 24px;
+            background-image: url(../images/header-bottom-right.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            right: 0;
+            bottom: -24px;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 71px;
+            background-image: url(../images/header-right.svg);
+            position: absolute;
+            left: -68px;
+            top: 0px;
+        }
+    }
+}
+
+.container {
+    width: 100;
+    max-width: 1830px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.banner {
+    display: flex;
+    background-image: url(../images/bg-banner.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
 }
