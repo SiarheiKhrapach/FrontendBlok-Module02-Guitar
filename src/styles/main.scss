@@ -699,4 +699,53 @@ button {
         }
     }
 }
+
+.social {
+    &__link {
+        display: block;
+        width: 44px;
+        height: 44px;
+        background-color: $light;
+        border-radius: 10px;
+        transform: $tr;
+        &:hover {
+            background-color: $accent;
+            &::after {
+                background-color: $light;
+            }
+        }
+        &::after {
+            content: '';
+            display: block;
+            background-color: $accent;
+            mask: center center / 100% no-repeat;
+            -mask-mask: center center / 100% no-repeat;
+            transition: $tr;
+        }
+        &._wa {
+            &::after {
+                width: 28px;
+                height: 28px;
+                mask-image: url(/src/images/social/wa.svg);
+                -webkit-mask-image: url(/src/images/social/wa.svg);
+            }
+        }
+        &._vk {
+            &::after {
+                width: 28px;
+                height: 28px;
+                mask-image: url(/src/images/social/vk.svg);
+                -webkit-mask-image: url(/src/images/social/vk.svg);
+            }
+        }
+        &._tg {
+            &::after {
+                width: 25px;
+                height: 21.875px;
+                mask-image: url(/src/images/social/tg.svg);
+                -webkit-mask-image: url(/src/images/social/tg.svg);
+            }
+        }
+    }
+}
     
